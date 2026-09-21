@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee Shop</title>
     <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
@@ -68,25 +74,171 @@
                 class="menu-btn__img menu-btn__img--dark"
               />
             </a>
+
+            <!-- Бургер: скрыт на десктопе, виден на мобильных -->
+            <button class="burger" id="burger" aria-label="Открыть меню">
+              <img
+                src="/src/assets/icons/button-icon-burger.svg"
+                alt=""
+                class="burger__img burger__img--light"
+              />
+              <img
+                src="/src/assets/icons/button-icon-burger-dark.svg"
+                alt=""
+                class="burger__img burger__img--dark"
+              />
+            </button>
           </div>
         </div>
       </div>
     </header>
 
     <main class="main">
-      coffee<!-- Основной контент -->
-
-      <!-- Ссылка -->
-      <a href="#about">About</a>
-
-      <!-- Секция с id="about" -->
-      <section id="about" class="about">
-        <h2>О нас</h2>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero__inner">
+            <div class="hero__offer">
+              <h1 class="hero__title heading-1 heading-1--accent">
+                Enjoy premium coffee at our charming cafe
+              </h1>
+              <p class="hero__text body-medium">
+                With its inviting atmosphere and delicious coffee options, the
+                Coffee House Resource is a popular destination for coffee lovers
+                and those seeking a warm and inviting space to enjoy their
+                favorite beverage.
+              </p>
+              <a href="/catalog.html" class="hero__button">
+                <span>Menu</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="footer" id="contacts">
-      <!-- Подвал -->
+      <div class="container">
+        <div class="footer__inner">
+          <!-- Левая часть: заголовок + соцсети -->
+          <div class="footer__offer">
+            <h2 class="footer__title">
+              <span class="footer__title-line">Sip, Savor, Smile.</span>
+              <span class="footer__title-line footer__title-line--accent"
+                >It's coffee time!</span
+              >
+            </h2>
+
+            <ul class="footer__socials">
+              <li>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer__social"
+                  aria-label="Twitter"
+                >
+                  <img
+                    src="/src/assets/icons/twitter.svg"
+                    alt=""
+                    class="footer__social-icon footer__social-icon--default"
+                  />
+                  <img
+                    src="/src/assets/icons/twitter-dark.svg"
+                    alt=""
+                    class="footer__social-icon footer__social-icon--hover"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer__social"
+                  aria-label="Instagram"
+                >
+                  <img
+                    src="/src/assets/icons/instagram.svg"
+                    alt=""
+                    class="footer__social-icon footer__social-icon--default"
+                  />
+                  <img
+                    src="/src/assets/icons/instagram-dark.svg"
+                    alt=""
+                    class="footer__social-icon footer__social-icon--hover"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer__social"
+                  aria-label="Facebook"
+                >
+                  <img
+                    src="/src/assets/icons/facebook.svg"
+                    alt=""
+                    class="footer__social-icon footer__social-icon--default"
+                  />
+                  <img
+                    src="/src/assets/icons/facebook-dark.svg"
+                    alt=""
+                    class="footer__social-icon footer__social-icon--hover"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Правая часть: контакты -->
+          <div class="footer__contacts">
+            <h3 class="footer__contacts-title">Contact us</h3>
+
+            <ul class="footer__contacts-list">
+              <li class="footer__contact">
+                <a
+                  href="https://maps.google.com/?q=8558+Green+Rd,+LA"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer__contact-link"
+                >
+                  <img
+                    src="/src/assets/icons/pin-alt.svg"
+                    alt=""
+                    class="footer__contact-icon"
+                  />
+                  <span>8558 Green Rd., LA</span>
+                </a>
+              </li>
+
+              <li class="footer__contact">
+                <a href="tel:+16035550123" class="footer__contact-link">
+                  <img
+                    src="/src/assets/icons/phone.svg"
+                    alt=""
+                    class="footer__contact-icon"
+                  />
+                  <span>+1 (603) 555-0123</span>
+                </a>
+              </li>
+
+              <li class="footer__contact">
+                <span class="footer__contact-link">
+                  <img
+                    src="/src/assets/icons/clock.svg"
+                    alt=""
+                    class="footer__contact-icon"
+                  />
+                  <span>Mon–Sat: 9:00–23:00</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script type="module" src="/src/js/main.js"></script>
