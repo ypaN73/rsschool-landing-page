@@ -688,6 +688,7 @@ button {
   gap: 40px;
   flex: 1;
   max-width: 630px;
+  min-width: 0;
 }
 
 .mobile-app__title {
@@ -786,6 +787,7 @@ button {
   flex-shrink: 0;
   width: 630px;
   height: 630px;
+  min-width: 0;
 }
 
 .mobile-app__img {
@@ -1150,6 +1152,7 @@ span.footer__contact-link::after {
 
   .mobile-app__offer {
     max-width: 100%;
+    min-width: 0;
   }
 
   .mobile-app__image {
@@ -1157,6 +1160,7 @@ span.footer__contact-link::after {
     max-width: 500px;
     height: auto;
     flex-shrink: 1;
+    min-width: 0;
   }
 }
 
@@ -1256,12 +1260,14 @@ span.footer__contact-link::after {
     max-width: 100%;
     width: 100%;
     flex: none;
+    min-width: 0;
   }
   .mobile-app__image {
     width: 100%;
     max-width: 400px;
     height: auto;
     flex-shrink: 1;
+    min-width: 0;
     margin: 0 auto;
   }
 
@@ -1307,6 +1313,9 @@ span.footer__contact-link::after {
   .footer__title {
     font-size: 40px;
   }
+  .footer__contacts-title {
+    font-size: 20px;
+  }
 }
 
 /* ===== Адаптив: телефоны (≤480px) ===== */
@@ -1317,6 +1326,9 @@ span.footer__contact-link::after {
   }
   .heading-2 {
     font-size: 32px;
+  }
+  .heading-3 {
+    font-size: 20px;
   }
 
   /* Hero */
@@ -1421,6 +1433,9 @@ span.footer__contact-link::after {
   }
   .footer__title {
     font-size: 32px;
+  }
+  .footer__contacts-title {
+    font-size: 20px;
   }
   .footer__social {
     width: 48px;

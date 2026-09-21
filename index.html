@@ -1,9 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee Shop</title>
+    <link
+      rel="icon"
+      href="/src/assets/icons/category-coffee.png"
+      type="image/png"
+    />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,7 +80,6 @@
               />
             </a>
 
-            <!-- Бургер: скрыт на десктопе, виден на мобильных -->
             <button class="burger" id="burger" aria-label="Открыть меню">
               <img
                 src="/src/assets/icons/button-icon-burger.svg"
@@ -94,7 +98,6 @@
     </header>
 
     <main class="main">
-      <!-- Hero -->
       <section class="hero">
         <div class="container">
           <div class="hero__inner">
@@ -115,6 +118,7 @@
           </div>
         </div>
       </section>
+
       <section class="slider-section" id="favorite">
         <div class="container">
           <h2 class="slider-section__title heading-2">
@@ -123,10 +127,10 @@
           </h2>
 
           <div class="slider">
-            <!-- Стрелка влево -->
             <button
               class="slider__arrow slider__arrow--prev"
               aria-label="Предыдущий слайд"
+              type="button"
             >
               <img
                 src="/src/assets/icons/arrow-left.svg"
@@ -150,10 +154,8 @@
               />
             </button>
 
-            <!-- Слайды -->
             <div class="slider__viewport">
               <ul class="slider__track">
-                <!-- Слайд 1 -->
                 <li class="slider__slide slider__slide--active">
                   <div class="slider__img-wrapper">
                     <img
@@ -177,7 +179,6 @@
                   </div>
                 </li>
 
-                <!-- Слайд 2 -->
                 <li class="slider__slide">
                   <div class="slider__img-wrapper">
                     <img
@@ -201,7 +202,6 @@
                   </div>
                 </li>
 
-                <!-- Слайд 3 -->
                 <li class="slider__slide">
                   <div class="slider__img-wrapper">
                     <img
@@ -227,10 +227,10 @@
               </ul>
             </div>
 
-            <!-- Стрелка вправо -->
             <button
               class="slider__arrow slider__arrow--next"
               aria-label="Следующий слайд"
+              type="button"
             >
               <img
                 src="/src/assets/icons/arrow-right.svg"
@@ -255,11 +255,11 @@
             </button>
           </div>
 
-          <!-- Точки (мобильные) -->
           <div class="slider__dots">
             <button
               class="slider__dot slider__dot--active"
               aria-label="Слайд 1"
+              type="button"
             >
               <img
                 src="/src/assets/icons/control-mobile-active.svg"
@@ -272,7 +272,7 @@
                 class="slider__dot-icon slider__dot-icon--default"
               />
             </button>
-            <button class="slider__dot" aria-label="Слайд 2">
+            <button class="slider__dot" aria-label="Слайд 2" type="button">
               <img
                 src="/src/assets/icons/control-mobile-active.svg"
                 alt=""
@@ -284,7 +284,7 @@
                 class="slider__dot-icon slider__dot-icon--default"
               />
             </button>
-            <button class="slider__dot" aria-label="Слайд 3">
+            <button class="slider__dot" aria-label="Слайд 3" type="button">
               <img
                 src="/src/assets/icons/control-mobile-active.svg"
                 alt=""
@@ -299,6 +299,7 @@
           </div>
         </div>
       </section>
+
       <section class="about" id="about">
         <div class="container">
           <h2 class="about__title heading-2">
@@ -309,7 +310,6 @@
           </h2>
 
           <div class="about__grid">
-            <!-- Колонка 1: картинки 1 (высокая) и 2 (низкая) -->
             <div class="about__column">
               <div class="about__item about__item--tall">
                 <img
@@ -329,7 +329,6 @@
               </div>
             </div>
 
-            <!-- Колонка 2: картинки 3 (низкая) и 4 (высокая) -->
             <div class="about__column">
               <div
                 class="about__item about__item--short about__item--hide-mobile"
@@ -351,10 +350,10 @@
           </div>
         </div>
       </section>
+
       <section class="mobile-app" id="mobile-app">
         <div class="container">
           <div class="mobile-app__inner">
-            <!-- Левая часть -->
             <div class="mobile-app__offer">
               <h2 class="mobile-app__title heading-2">
                 <span class="mobile-app__title-accent">Download</span> our
@@ -368,7 +367,6 @@
               </p>
 
               <div class="mobile-app__buttons">
-                <!-- App Store -->
                 <a
                   href="https://apps.apple.com"
                   target="_blank"
@@ -393,7 +391,6 @@
                   </span>
                 </a>
 
-                <!-- Google Play -->
                 <a
                   href="https://play.google.com"
                   target="_blank"
@@ -420,7 +417,6 @@
               </div>
             </div>
 
-            <!-- Правая часть -->
             <div class="mobile-app__image">
               <img
                 src="/src/assets/icons/mobile-screens.png"
@@ -436,7 +432,6 @@
     <footer class="footer" id="contacts">
       <div class="container">
         <div class="footer__inner">
-          <!-- Левая часть: заголовок + соцсети -->
           <div class="footer__offer">
             <h2 class="footer__title">
               <span class="footer__title-line">Sip, Savor, Smile.</span>
@@ -509,9 +504,8 @@
             </ul>
           </div>
 
-          <!-- Правая часть: контакты -->
           <div class="footer__contacts">
-            <h3 class="footer__contacts-title">Contact us</h3>
+            <h2 class="footer__contacts-title">Contact us</h2>
 
             <ul class="footer__contacts-list">
               <li class="footer__contact">

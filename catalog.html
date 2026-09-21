@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Каталог — Coffee Shop</title>
+    <link
+      rel="icon"
+      href="/src/assets/icons/category-coffee.png"
+      type="image/png"
+    />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,7 +18,7 @@
     />
   </head>
   <body>
-    <!-- Header (тот же, что на index.html, но с menu-btn--active) -->
+    <!-- Header с menu-btn--active -->
     <header class="header">
       <div class="container">
         <div class="header__inner">
@@ -102,17 +107,16 @@
     <main class="main">
       <section class="catalog" id="menu">
         <div class="container">
-          <!-- Заголовок -->
           <h1 class="catalog__title heading-2">
             Behind each of our cups hides an
             <span class="catalog__title-accent">amazing surprise</span>
           </h1>
 
-          <!-- Категории -->
           <div class="catalog__tabs">
             <button
               class="catalog__tab catalog__tab--active"
               data-category="coffee"
+              type="button"
             >
               <span class="catalog__tab-icon">
                 <img
@@ -124,7 +128,7 @@
               <span class="catalog__tab-text">Coffee</span>
             </button>
 
-            <button class="catalog__tab" data-category="tea">
+            <button class="catalog__tab" data-category="tea" type="button">
               <span class="catalog__tab-icon">
                 <img
                   src="/src/assets/icons/category-tea.png"
@@ -135,7 +139,7 @@
               <span class="catalog__tab-text">Tea</span>
             </button>
 
-            <button class="catalog__tab" data-category="dessert">
+            <button class="catalog__tab" data-category="dessert" type="button">
               <span class="catalog__tab-icon">
                 <img
                   src="/src/assets/icons/category-dessert.png"
@@ -147,9 +151,7 @@
             </button>
           </div>
 
-          <!-- Сетка карточек -->
           <div class="catalog__grid">
-            <!-- Карточка 1 -->
             <article class="card">
               <div class="card__img-wrapper">
                 <img
@@ -159,7 +161,7 @@
                 />
               </div>
               <div class="card__info">
-                <h3 class="card__title heading-3">Irish coffee</h3>
+                <h2 class="card__title heading-3">Irish coffee</h2>
                 <p class="card__desc body-medium">
                   Fragrant black coffee with Jameson Irish whiskey and whipped
                   milk
@@ -168,7 +170,6 @@
               </div>
             </article>
 
-            <!-- Карточка 2 -->
             <article class="card">
               <div class="card__img-wrapper">
                 <img
@@ -178,7 +179,7 @@
                 />
               </div>
               <div class="card__info">
-                <h3 class="card__title heading-3">Kahlua coffee</h3>
+                <h2 class="card__title heading-3">Kahlua coffee</h2>
                 <p class="card__desc body-medium">
                   Classic coffee with milk and Kahlua liqueur under a cap of
                   frothed milk
@@ -187,7 +188,6 @@
               </div>
             </article>
 
-            <!-- Карточка 3 -->
             <article class="card">
               <div class="card__img-wrapper">
                 <img
@@ -197,7 +197,7 @@
                 />
               </div>
               <div class="card__info">
-                <h3 class="card__title heading-3">Honey raf</h3>
+                <h2 class="card__title heading-3">Honey raf</h2>
                 <p class="card__desc body-medium">
                   Espresso with frothed milk, cream and aromatic honey
                 </p>
@@ -205,7 +205,6 @@
               </div>
             </article>
 
-            <!-- Карточка 4 -->
             <article class="card">
               <div class="card__img-wrapper">
                 <img
@@ -215,7 +214,7 @@
                 />
               </div>
               <div class="card__info">
-                <h3 class="card__title heading-3">Ice cappuccino</h3>
+                <h2 class="card__title heading-3">Ice cappuccino</h2>
                 <p class="card__desc body-medium">
                   Cappuccino with soft thick foam in summer version with ice
                 </p>
@@ -223,7 +222,6 @@
               </div>
             </article>
 
-            <!-- Карточка 5 -->
             <article class="card">
               <div class="card__img-wrapper">
                 <img
@@ -233,13 +231,12 @@
                 />
               </div>
               <div class="card__info">
-                <h3 class="card__title heading-3">Espresso</h3>
+                <h2 class="card__title heading-3">Espresso</h2>
                 <p class="card__desc body-medium">Classic black coffee</p>
                 <p class="card__price heading-3">$4.50</p>
               </div>
             </article>
 
-            <!-- Карточка 6 -->
             <article class="card">
               <div class="card__img-wrapper">
                 <img
@@ -249,7 +246,7 @@
                 />
               </div>
               <div class="card__info">
-                <h3 class="card__title heading-3">Latte</h3>
+                <h2 class="card__title heading-3">Latte</h2>
                 <p class="card__desc body-medium">
                   Espresso coffee with the addition of steamed milk and dense
                   milk foam
@@ -258,7 +255,6 @@
               </div>
             </article>
 
-            <!-- Карточка 7 -->
             <article class="card">
               <div class="card__img-wrapper">
                 <img
@@ -268,7 +264,7 @@
                 />
               </div>
               <div class="card__info">
-                <h3 class="card__title heading-3">Latte macchiato</h3>
+                <h2 class="card__title heading-3">Latte macchiato</h2>
                 <p class="card__desc body-medium">
                   Espresso with frothed milk and chocolate
                 </p>
@@ -276,7 +272,6 @@
               </div>
             </article>
 
-            <!-- Карточка 8 -->
             <article class="card">
               <div class="card__img-wrapper">
                 <img
@@ -286,7 +281,7 @@
                 />
               </div>
               <div class="card__info">
-                <h3 class="card__title heading-3">Coffee with cognac</h3>
+                <h2 class="card__title heading-3">Coffee with cognac</h2>
                 <p class="card__desc body-medium">
                   Fragrant black coffee with cognac and whipped cream
                 </p>
@@ -295,7 +290,6 @@
             </article>
           </div>
 
-          <!-- Кнопка "Show more" -->
           <div class="catalog__more">
             <button class="catalog__more-btn" type="button">
               <span>Show more</span>
@@ -308,7 +302,6 @@
     <footer class="footer" id="contacts">
       <div class="container">
         <div class="footer__inner">
-          <!-- Левая часть: заголовок + соцсети -->
           <div class="footer__offer">
             <h2 class="footer__title">
               <span class="footer__title-line">Sip, Savor, Smile.</span>
@@ -381,9 +374,8 @@
             </ul>
           </div>
 
-          <!-- Правая часть: контакты -->
           <div class="footer__contacts">
-            <h3 class="footer__contacts-title">Contact us</h3>
+            <h2 class="footer__contacts-title">Contact us</h2>
 
             <ul class="footer__contacts-list">
               <li class="footer__contact">
