@@ -371,7 +371,7 @@ button {
   align-items: center;
   padding: 100px;
   min-height: 644px;
-  background-image: url("/src/assets/images/hero.jpg");
+  background-image: url("/images/hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

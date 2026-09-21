@@ -1,14 +1,11 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import fullReload from "vite-plugin-full-reload";
 
 export default defineConfig({
-  plugins: [
-    fullReload(["*.html"]), // Перезагружать при изменении HTML
-  ],
+  base: "/rsschool-landing-page/",
   server: {
     port: 3001,
-    open: true, //автооткрытие браузера
+    open: true,
   },
   build: {
     sourcemap: true,
