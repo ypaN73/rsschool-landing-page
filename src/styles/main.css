@@ -1,3 +1,4 @@
+/* ===== База ===== */
 * {
   box-sizing: border-box;
 }
@@ -7,6 +8,257 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: #e1d4c9;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.5;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ===== Цвета (светлая тема — по умолчанию) ===== */
+:root {
+  --bg-page: #e1d4c9;
+  --bg-container: #665f55;
+  --bg-overlay: rgba(64, 63, 61, 0.8);
+  --text-primary: #403f3d;
+  --text-accent: #b0907a;
+  --text-inverse: #e1d4c9;
+  --border-primary: #c1b6ad;
+  --border-inverse: #665f55;
+}
+
+/* ===== Цвета (тёмная тема) ===== */
+[data-theme="dark"] {
+  --bg-page: #292826;
+  --bg-container: #403f3d;
+  --bg-overlay: rgba(41, 40, 38, 0.8);
+  --text-primary: #e1d4c9;
+  --text-accent: #b0907a;
+  --text-inverse: #292826;
+  --border-primary: #665f55;
+  --border-inverse: #c1b6ad;
+}
+
+/* ===== Контейнер ===== */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ===== Шапка ===== */
+.header {
+  padding: 20px 0;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  height: 60px;
+}
+
+/* ===== Лого ===== */
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100px;
+  height: 60px;
+}
+
+.logo__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
+}
+
+:root:not([data-theme="dark"]) .logo__img--light {
+  opacity: 1;
+}
+:root:not([data-theme="dark"]) .logo__img--dark {
+  opacity: 0;
+}
+[data-theme="dark"] .logo__img--light {
+  opacity: 0;
+}
+[data-theme="dark"] .logo__img--dark {
+  opacity: 1;
+}
+
+/* ===== Навигация ===== */
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__list {
+  display: flex;
+  gap: 40px;
+}
+
+.nav__link {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.nav__link:hover {
+  color: var(--text-accent);
+}
+
+/* ===== Кнопки справа ===== */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+/* --- Переключатель темы --- */
+.theme-toggle {
+  position: relative;
+  width: 88px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-toggle__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.theme-toggle__img--hover {
+  opacity: 0;
+}
+
+:root:not([data-theme="dark"]) .theme-toggle__img--sun {
+  opacity: 1;
+}
+:root:not([data-theme="dark"]) .theme-toggle__img--moon {
+  opacity: 0;
+}
+[data-theme="dark"] .theme-toggle__img--sun {
+  opacity: 0;
+}
+[data-theme="dark"] .theme-toggle__img--moon {
+  opacity: 1;
+}
+
+.theme-toggle:hover .theme-toggle__img--hover {
+  opacity: 1;
+}
+.theme-toggle:hover .theme-toggle__img--sun {
+  opacity: 0;
+}
+.theme-toggle:hover .theme-toggle__img--moon {
+  opacity: 0;
+}
+
+/* --- Кнопка Menu --- */
+.menu-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding-right: 32px; /* место под иконку справа */
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.menu-btn:hover {
+  color: var(--text-accent);
+}
+
+.menu-btn__text {
+  line-height: 1.5;
+}
+
+.menu-btn__img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s;
+}
+
+:root:not([data-theme="dark"]) .menu-btn__img--light {
+  opacity: 1;
+}
+:root:not([data-theme="dark"]) .menu-btn__img--dark {
+  opacity: 0;
+}
+[data-theme="dark"] .menu-btn__img--light {
+  opacity: 0;
+}
+[data-theme="dark"] .menu-btn__img--dark {
+  opacity: 1;
+}
+
+/* ===== Тёмная тема — фон страницы ===== */
+[data-theme="dark"] body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .nav__link {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .nav__link:hover {
+  color: var(--text-accent);
 }

@@ -9,21 +9,83 @@
   <body>
     <header class="header">
       <div class="container">
-        <div class="header_inner">
+        <div class="header__inner">
           <a href="/" class="logo">
             <img
               src="/src/assets/icons/logo.svg"
               alt="Coffee Shop"
-              class="logo__img"
+              class="logo__img logo__img--light"
+            />
+            <img
+              src="/src/assets/icons/logo-dark.svg"
+              alt="Coffee Shop"
+              class="logo__img logo__img--dark"
             />
           </a>
+
+          <nav class="nav">
+            <ul class="nav__list">
+              <li><a href="#favorite" class="nav__link">Favorite coffee</a></li>
+              <li><a href="#about" class="nav__link">About</a></li>
+              <li><a href="#mobile-app" class="nav__link">Mobile App</a></li>
+              <li><a href="#contacts" class="nav__link">Contact us</a></li>
+            </ul>
+          </nav>
+
+          <div class="header__actions">
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              aria-label="Переключить тему"
+            >
+              <img
+                src="/src/assets/icons/theme-sun.svg"
+                alt=""
+                class="theme-toggle__img theme-toggle__img--sun"
+              />
+              <img
+                src="/src/assets/icons/theme-moon.svg"
+                alt=""
+                class="theme-toggle__img theme-toggle__img--moon"
+              />
+              <img
+                src="/src/assets/icons/theme-hover.svg"
+                alt=""
+                class="theme-toggle__img theme-toggle__img--hover"
+              />
+            </button>
+
+            <a href="/catalog.html" class="menu-btn" aria-label="Меню">
+              <span class="menu-btn__text">Menu</span>
+              <img
+                src="/src/assets/icons/coffee-cup.svg"
+                alt=""
+                class="menu-btn__img menu-btn__img--light"
+              />
+              <img
+                src="/src/assets/icons/coffee-cup-dark.svg"
+                alt=""
+                class="menu-btn__img menu-btn__img--dark"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </header>
 
-    <main class="main">coffee<!-- Основной контент --></main>
+    <main class="main">
+      coffee<!-- Основной контент -->
 
-    <footer class="footer">
+      <!-- Ссылка -->
+      <a href="#about">About</a>
+
+      <!-- Секция с id="about" -->
+      <section id="about" class="about">
+        <h2>О нас</h2>
+      </section>
+    </main>
+
+    <footer class="footer" id="contacts">
       <!-- Подвал -->
     </footer>
 
