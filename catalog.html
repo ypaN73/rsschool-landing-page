@@ -1,12 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coffee Shop</title>
+    <title>Каталог — Coffee Shop</title>
     <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- Header (тот же, что на index.html, но с menu-btn--active) -->
     <header class="header">
       <div class="container">
         <div class="header__inner">
@@ -25,9 +32,11 @@
 
           <nav class="nav">
             <ul class="nav__list">
-              <li><a href="#favorite" class="nav__link">Favorite coffee</a></li>
-              <li><a href="#about" class="nav__link">About</a></li>
-              <li><a href="#mobile-app" class="nav__link">Mobile App</a></li>
+              <li>
+                <a href="/#favorite" class="nav__link">Favorite coffee</a>
+              </li>
+              <li><a href="/#about" class="nav__link">About</a></li>
+              <li><a href="/#mobile-app" class="nav__link">Mobile App</a></li>
               <li><a href="#contacts" class="nav__link">Contact us</a></li>
             </ul>
           </nav>
@@ -73,7 +82,6 @@
               />
             </a>
 
-            <!-- Бургер: скрыт на десктопе, виден на мобильных -->
             <button class="burger" id="burger" aria-label="Открыть меню">
               <img
                 src="/src/assets/icons/button-icon-burger.svg"
@@ -90,7 +98,212 @@
         </div>
       </div>
     </header>
-    catalog
+
+    <main class="main">
+      <section class="catalog" id="menu">
+        <div class="container">
+          <!-- Заголовок -->
+          <h1 class="catalog__title heading-2">
+            Behind each of our cups hides an
+            <span class="catalog__title-accent">amazing surprise</span>
+          </h1>
+
+          <!-- Категории -->
+          <div class="catalog__tabs">
+            <button
+              class="catalog__tab catalog__tab--active"
+              data-category="coffee"
+            >
+              <span class="catalog__tab-icon">
+                <img
+                  src="/src/assets/icons/category-coffee.png"
+                  alt=""
+                  class="catalog__tab-img"
+                />
+              </span>
+              <span class="catalog__tab-text">Coffee</span>
+            </button>
+
+            <button class="catalog__tab" data-category="tea">
+              <span class="catalog__tab-icon">
+                <img
+                  src="/src/assets/icons/category-tea.png"
+                  alt=""
+                  class="catalog__tab-img"
+                />
+              </span>
+              <span class="catalog__tab-text">Tea</span>
+            </button>
+
+            <button class="catalog__tab" data-category="dessert">
+              <span class="catalog__tab-icon">
+                <img
+                  src="/src/assets/icons/category-dessert.png"
+                  alt=""
+                  class="catalog__tab-img"
+                />
+              </span>
+              <span class="catalog__tab-text">Dessert</span>
+            </button>
+          </div>
+
+          <!-- Сетка карточек -->
+          <div class="catalog__grid">
+            <!-- Карточка 1 -->
+            <article class="card">
+              <div class="card__img-wrapper">
+                <img
+                  src="/src/assets/images/coffee-1.jpg"
+                  alt="Irish coffee"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__info">
+                <h3 class="card__title heading-3">Irish coffee</h3>
+                <p class="card__desc body-medium">
+                  Fragrant black coffee with Jameson Irish whiskey and whipped
+                  milk
+                </p>
+                <p class="card__price heading-3">$7.00</p>
+              </div>
+            </article>
+
+            <!-- Карточка 2 -->
+            <article class="card">
+              <div class="card__img-wrapper">
+                <img
+                  src="/src/assets/images/coffee-2.jpg"
+                  alt="Kahlua coffee"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__info">
+                <h3 class="card__title heading-3">Kahlua coffee</h3>
+                <p class="card__desc body-medium">
+                  Classic coffee with milk and Kahlua liqueur under a cap of
+                  frothed milk
+                </p>
+                <p class="card__price heading-3">$7.00</p>
+              </div>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="card">
+              <div class="card__img-wrapper">
+                <img
+                  src="/src/assets/images/coffee-3.jpg"
+                  alt="Honey raf"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__info">
+                <h3 class="card__title heading-3">Honey raf</h3>
+                <p class="card__desc body-medium">
+                  Espresso with frothed milk, cream and aromatic honey
+                </p>
+                <p class="card__price heading-3">$5.50</p>
+              </div>
+            </article>
+
+            <!-- Карточка 4 -->
+            <article class="card">
+              <div class="card__img-wrapper">
+                <img
+                  src="/src/assets/images/coffee-4.jpg"
+                  alt="Ice cappuccino"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__info">
+                <h3 class="card__title heading-3">Ice cappuccino</h3>
+                <p class="card__desc body-medium">
+                  Cappuccino with soft thick foam in summer version with ice
+                </p>
+                <p class="card__price heading-3">$5.00</p>
+              </div>
+            </article>
+
+            <!-- Карточка 5 -->
+            <article class="card">
+              <div class="card__img-wrapper">
+                <img
+                  src="/src/assets/images/coffee-5.jpg"
+                  alt="Espresso"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__info">
+                <h3 class="card__title heading-3">Espresso</h3>
+                <p class="card__desc body-medium">Classic black coffee</p>
+                <p class="card__price heading-3">$4.50</p>
+              </div>
+            </article>
+
+            <!-- Карточка 6 -->
+            <article class="card">
+              <div class="card__img-wrapper">
+                <img
+                  src="/src/assets/images/coffee-6.jpg"
+                  alt="Latte"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__info">
+                <h3 class="card__title heading-3">Latte</h3>
+                <p class="card__desc body-medium">
+                  Espresso coffee with the addition of steamed milk and dense
+                  milk foam
+                </p>
+                <p class="card__price heading-3">$5.50</p>
+              </div>
+            </article>
+
+            <!-- Карточка 7 -->
+            <article class="card">
+              <div class="card__img-wrapper">
+                <img
+                  src="/src/assets/images/coffee-7.jpg"
+                  alt="Latte macchiato"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__info">
+                <h3 class="card__title heading-3">Latte macchiato</h3>
+                <p class="card__desc body-medium">
+                  Espresso with frothed milk and chocolate
+                </p>
+                <p class="card__price heading-3">$5.50</p>
+              </div>
+            </article>
+
+            <!-- Карточка 8 -->
+            <article class="card">
+              <div class="card__img-wrapper">
+                <img
+                  src="/src/assets/images/coffee-8.jpg"
+                  alt="Coffee with cognac"
+                  class="card__img"
+                />
+              </div>
+              <div class="card__info">
+                <h3 class="card__title heading-3">Coffee with cognac</h3>
+                <p class="card__desc body-medium">
+                  Fragrant black coffee with cognac and whipped cream
+                </p>
+                <p class="card__price heading-3">$6.50</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Кнопка "Show more" -->
+          <div class="catalog__more">
+            <button class="catalog__more-btn" type="button">
+              <span>Show more</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer" id="contacts">
       <div class="container">
@@ -215,6 +428,7 @@
         </div>
       </div>
     </footer>
+
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

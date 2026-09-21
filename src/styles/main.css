@@ -711,7 +711,6 @@ button {
   flex-wrap: wrap;
 }
 
-/* Кнопка App Store / Google Play */
 .app-btn {
   position: relative;
   display: inline-flex;
@@ -740,14 +739,12 @@ button {
   transition: opacity 0.2s;
 }
 
-/* Светлая тема */
 :root:not([data-theme="dark"]) .app-btn__icon--default {
   opacity: 1;
 }
 :root:not([data-theme="dark"]) .app-btn__icon--hover {
   opacity: 0;
 }
-
 :root:not([data-theme="dark"]) .app-btn:hover .app-btn__icon--default {
   opacity: 0;
 }
@@ -755,7 +752,6 @@ button {
   opacity: 1;
 }
 
-/* Тёмная тема: hover-иконка видна всегда */
 [data-theme="dark"] .app-btn__icon--default {
   opacity: 0;
 }
@@ -796,6 +792,188 @@ button {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* ===== Секция Catalog ===== */
+.catalog {
+  padding: 100px 0;
+}
+
+.catalog__title {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 40px;
+}
+
+.catalog__title-accent {
+  font-style: italic;
+  color: var(--text-accent);
+}
+
+.catalog__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.catalog__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid var(--border-primary);
+  border-radius: 100px;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.catalog__tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: var(--border-primary);
+  transition: background-color 0.2s;
+}
+
+.catalog__tab-img {
+  width: 16px;
+  height: 16px;
+  transition: filter 0.2s;
+}
+
+.catalog__tab-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.catalog__tab--active {
+  background-color: var(--bg-container);
+  border-color: var(--bg-container);
+}
+
+.catalog__tab--active .catalog__tab-icon {
+  background-color: var(--bg-page);
+}
+
+.catalog__tab--active .catalog__tab-text {
+  color: var(--text-inverse);
+}
+
+.catalog__tab:not(.catalog__tab--active):hover {
+  background-color: var(--bg-container);
+  border-color: var(--bg-container);
+}
+
+.catalog__tab:not(.catalog__tab--active):hover .catalog__tab-icon {
+  background-color: var(--bg-page);
+}
+
+.catalog__tab:not(.catalog__tab--active):hover .catalog__tab-text {
+  color: var(--text-inverse);
+}
+
+/* Сетка карточек — основное правило: 4 в ряд */
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-primary);
+  border-radius: 40px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card__img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.card:hover .card__img {
+  transform: scale(1.05);
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  flex: 1;
+}
+
+.card__title {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.card__desc {
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.card__price {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.catalog__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.catalog__more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 78px;
+  height: 64px;
+  border: 1px solid var(--border-inverse);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.catalog__more-btn:hover {
+  background-color: var(--bg-container);
+  border-color: var(--bg-container);
+  color: var(--text-inverse);
 }
 
 /* ===== Футер ===== */
@@ -1087,6 +1265,33 @@ span.footer__contact-link::after {
     margin: 0 auto;
   }
 
+  /* Catalog — 2 в ряд */
+  .catalog {
+    padding: 60px 0;
+  }
+  .catalog__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .catalog__tabs {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .catalog__tab {
+    padding: 6px 12px 6px 6px;
+  }
+  .catalog__tab-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .catalog__tab-text {
+    font-size: 14px;
+  }
+  .catalog__more-btn {
+    padding: 16px 60px;
+    height: 56px;
+  }
+
   /* Футер */
   .footer__inner {
     flex-direction: column;
@@ -1184,6 +1389,29 @@ span.footer__contact-link::after {
   }
   .mobile-app__image {
     max-width: 280px;
+  }
+
+  /* Catalog — 1 в ряд */
+  .catalog {
+    padding: 40px 0;
+  }
+  .catalog__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .catalog__tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .catalog__tab {
+    justify-content: center;
+  }
+  .catalog__more-btn {
+    width: 100%;
+    padding: 16px 20px;
+  }
+  .card__info {
+    padding: 16px;
   }
 
   /* Футер */
