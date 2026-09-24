@@ -1446,3 +1446,19 @@ span.footer__contact-link::after {
     height: 20px;
   }
 }
+
+.slider__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.slider__slide--active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
