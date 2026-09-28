@@ -139,7 +139,16 @@ button {
 
 /* ===== Шапка ===== */
 .header {
-  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-page);
+  z-index: 1000;
+}
+
+.main {
+  padding-top: 100px;
 }
 
 .header__inner {
@@ -616,19 +625,17 @@ body.menu-open {
 
 .slider__track {
   display: flex;
-  justify-content: center;
+  transition: transform 0.4s ease;
+  will-change: transform;
 }
 
 .slider__slide {
-  display: none;
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 100%;
-}
-
-.slider__slide--active {
-  display: flex;
 }
 
 .slider__img-wrapper {
