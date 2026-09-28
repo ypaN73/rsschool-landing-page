@@ -76,20 +76,66 @@
               />
             </a>
 
-            <button class="burger" id="burger" aria-label="Открыть меню">
+            <button
+              class="burger"
+              id="burger"
+              aria-label="Открыть меню"
+              aria-expanded="false"
+            >
               <img
                 src="./icons/button-icon-burger.svg"
                 alt=""
-                class="burger__img burger__img--light"
+                class="burger__img burger__img--burger burger__img--light"
               />
               <img
                 src="./icons/button-icon-burger-dark.svg"
                 alt=""
-                class="burger__img burger__img--dark"
+                class="burger__img burger__img--burger burger__img--dark"
+              />
+              <img
+                src="./icons/button-icon-burger-cross.svg"
+                alt=""
+                class="burger__img burger__img--cross burger__img--light"
+              />
+              <img
+                src="./icons/button-icon-burger-cross-dark.svg"
+                alt=""
+                class="burger__img burger__img--cross burger__img--dark"
               />
             </button>
           </div>
         </div>
+      </div>
+
+      <!-- Мобильное меню -->
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__list">
+            <li>
+              <a href="#favorite" class="mobile-menu__link">Favorite coffee</a>
+            </li>
+            <li><a href="#about" class="mobile-menu__link">About</a></li>
+            <li>
+              <a href="#mobile-app" class="mobile-menu__link">Mobile app</a>
+            </li>
+            <li>
+              <a href="#contacts" class="mobile-menu__link">Contact us</a>
+            </li>
+            <li>
+              <a
+                href="./catalog.html"
+                class="mobile-menu__link mobile-menu__link--with-icon"
+              >
+                <span>Menu</span>
+                <img
+                  src="./icons/coffee-cup.svg"
+                  alt=""
+                  class="mobile-menu__icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 

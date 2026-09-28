@@ -268,10 +268,11 @@ button {
   position: relative;
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   height: 44px;
-  padding-right: 32px;
   font-size: 16px;
   font-weight: 600;
+  line-height: 1;
   color: var(--text-primary);
   transition: color 0.2s;
   flex-shrink: 0;
@@ -282,14 +283,12 @@ button {
 }
 
 .menu-btn__text {
-  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .menu-btn__img {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   width: 24px;
   height: 24px;
   transition: opacity 0.3s;
@@ -342,23 +341,113 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.8);
-  width: 24px;
-  height: 24px;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  opacity: 0;
   transition: opacity 0.3s;
 }
 
-:root:not([data-theme="dark"]) .burger__img--light {
+/* Светлая тема: бургер виден */
+:root:not([data-theme="dark"]) .burger__img--burger.burger__img--light {
   opacity: 1;
 }
-:root:not([data-theme="dark"]) .burger__img--dark {
-  opacity: 0;
-}
-[data-theme="dark"] .burger__img--light {
-  opacity: 0;
-}
-[data-theme="dark"] .burger__img--dark {
+
+/* Тёмная тема: бургер виден */
+[data-theme="dark"] .burger__img--burger.burger__img--dark {
   opacity: 1;
+}
+
+/* Открытое меню: светлая тема */
+:root:not([data-theme="dark"])
+  .burger--open
+  .burger__img--burger.burger__img--light {
+  opacity: 0;
+}
+:root:not([data-theme="dark"])
+  .burger--open
+  .burger__img--cross.burger__img--light {
+  opacity: 1;
+}
+
+/* Открытое меню: тёмная тема */
+[data-theme="dark"] .burger--open .burger__img--burger.burger__img--dark {
+  opacity: 0;
+}
+[data-theme="dark"] .burger--open .burger__img--cross.burger__img--dark {
+  opacity: 1;
+}
+
+/* ===== Мобильное меню ===== */
+.mobile-menu {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-page);
+  padding: 60px 40px;
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    transform 0.3s,
+    opacity 0.3s,
+    visibility 0.3s;
+  z-index: 999;
+}
+
+.mobile-menu--open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex: 1;
+}
+
+.mobile-menu__link {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.mobile-menu__link:hover {
+  color: var(--text-accent);
+}
+
+.mobile-menu__link--with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-menu__icon {
+  width: 40px;
+  height: 40px;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 /* ===== Hero ===== */
@@ -884,7 +973,7 @@ button {
   color: var(--text-inverse);
 }
 
-/* Сетка карточек — основное правило: 4 в ряд */
+/* Сетка карточек */
 .catalog__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1445,20 +1534,4 @@ span.footer__contact-link::after {
     width: 20px;
     height: 20px;
   }
-}
-
-.slider__slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-
-.slider__slide--active {
-  opacity: 1;
-  pointer-events: auto;
-  position: relative;
 }
