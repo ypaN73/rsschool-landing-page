@@ -1,10 +1,17 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Каталог — Coffee Shop</title>
     <link rel="icon" href="./icons/category-coffee.png" type="image/png" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const theme = saved || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <link rel="stylesheet" href="./src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +32,8 @@
             />
             <img
               src="./icons/logo-dark.svg"
-              alt="Coffee Shop"
+              alt=""
+              aria-hidden="true"
               class="logo__img logo__img--dark"
             />
           </a>
@@ -207,6 +215,54 @@
         </div>
       </section>
     </main>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal__overlay" data-close></div>
+
+      <div class="modal__content" role="dialog" aria-modal="true">
+        <div class="modal__body">
+          <div class="modal__img-wrapper">
+            <img src="" alt="" class="modal__img" id="modal-img" />
+          </div>
+
+          <div class="modal__info">
+            <h2 class="modal__title heading-3" id="modal-title"></h2>
+            <p class="modal__desc body-medium" id="modal-desc"></p>
+
+            <!-- Size -->
+            <div class="modal__section">
+              <h3 class="modal__section-title">Size</h3>
+              <div class="modal__options" id="modal-sizes"></div>
+            </div>
+
+            <!-- Additives -->
+            <div class="modal__section">
+              <h3 class="modal__section-title">Additives</h3>
+              <div class="modal__options" id="modal-additives"></div>
+            </div>
+
+            <!-- Total -->
+            <div class="modal__total">
+              <span class="modal__total-label">Total:</span>
+              <span class="modal__total-price heading-3" id="modal-total"
+                >$0.00</span
+              >
+            </div>
+
+            <p class="modal__notice body-caption">
+              The cost is not final. Download our mobile app to see the final
+              price and place your order. Earn loyalty points and enjoy your
+              favorite coffee with up to 20% discount.
+            </p>
+
+            <button class="modal__submit" type="button" data-close>
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer" id="contacts">
       <div class="container">

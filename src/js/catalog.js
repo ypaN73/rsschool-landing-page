@@ -13,6 +13,8 @@ export function initCatalog() {
 
   if (!grid || !tabs.length) return;
 
+  window.productsData = products;
+
   function isMobile() {
     return window.innerWidth <= 768;
   }
@@ -48,20 +50,23 @@ export function initCatalog() {
   function createCard(product) {
     const article = document.createElement("article");
     article.className = "card";
+    article.dataset.productId = product.name;
+
     article.innerHTML = `
-      <div class="card__img-wrapper">
-        <img
-          src="./images/${product.image}"
-          alt="${product.name}"
-          class="card__img"
-        />
-      </div>
-      <div class="card__info">
-        <h2 class="card__title heading-3">${product.name}</h2>
-        <p class="card__desc body-medium">${product.description}</p>
-        <p class="card__price heading-3">$${product.price}</p>
-      </div>
-    `;
+    <div class="card__img-wrapper">
+      <img
+        src="./images/${product.image}"
+        alt="${product.name}"
+        class="card__img"
+      />
+    </div>
+    <div class="card__info">
+      <h2 class="card__title heading-3">${product.name}</h2>
+      <p class="card__desc body-medium">${product.description}</p>
+      <p class="card__price heading-3">$${product.price}</p>
+    </div>
+  `;
+
     return article;
   }
 
