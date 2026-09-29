@@ -1,10 +1,17 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Каталог — Coffee Shop</title>
     <link rel="icon" href="./icons/category-coffee.png" type="image/png" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const theme = saved || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <link rel="stylesheet" href="./src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +32,8 @@
             />
             <img
               src="./icons/logo-dark.svg"
-              alt="Coffee Shop"
+              alt=""
+              aria-hidden="true"
               class="logo__img logo__img--dark"
             />
           </a>
@@ -36,7 +44,9 @@
                 <a href="./#favorite" class="nav__link">Favorite coffee</a>
               </li>
               <li><a href="./#about" class="nav__link">About</a></li>
-              <li><a href="./#mobile-app" class="nav__link">Mobile App</a></li>
+              <li>
+                <a href="./#mobile-app" class="nav__link">Mobile App</a>
+              </li>
               <li><a href="#contacts" class="nav__link">Contact us</a></li>
             </ul>
           </nav>
@@ -82,20 +92,68 @@
               />
             </a>
 
-            <button class="burger" id="burger" aria-label="Открыть меню">
+            <button
+              class="burger"
+              id="burger"
+              aria-label="Открыть меню"
+              aria-expanded="false"
+            >
               <img
                 src="./icons/button-icon-burger.svg"
                 alt=""
-                class="burger__img burger__img--light"
+                class="burger__img burger__img--burger burger__img--light"
               />
               <img
                 src="./icons/button-icon-burger-dark.svg"
                 alt=""
-                class="burger__img burger__img--dark"
+                class="burger__img burger__img--burger burger__img--dark"
+              />
+              <img
+                src="./icons/button-icon-burger-cross.svg"
+                alt=""
+                class="burger__img burger__img--cross burger__img--light"
+              />
+              <img
+                src="./icons/button-icon-burger-cross-dark.svg"
+                alt=""
+                class="burger__img burger__img--cross burger__img--dark"
               />
             </button>
           </div>
         </div>
+      </div>
+
+      <!-- Мобильное меню -->
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__list">
+            <li>
+              <a href="./#favorite" class="mobile-menu__link"
+                >Favorite coffee</a
+              >
+            </li>
+            <li><a href="./#about" class="mobile-menu__link">About</a></li>
+            <li>
+              <a href="./#mobile-app" class="mobile-menu__link">Mobile app</a>
+            </li>
+            <li>
+              <a href="#contacts" class="mobile-menu__link">Contact us</a>
+            </li>
+            <li>
+              <a
+                href="./catalog.html"
+                class="mobile-menu__link mobile-menu__link--with-icon"
+              >
+                <span>Menu</span>
+                <img
+                  src="./icons/coffee-cup.svg"
+                  alt=""
+                  class="mobile-menu__icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -146,153 +204,65 @@
             </button>
           </div>
 
-          <div class="catalog__grid">
-            <article class="card">
-              <div class="card__img-wrapper">
-                <img
-                  src="./images/coffee-1.jpg"
-                  alt="Irish coffee"
-                  class="card__img"
-                />
-              </div>
-              <div class="card__info">
-                <h2 class="card__title heading-3">Irish coffee</h2>
-                <p class="card__desc body-medium">
-                  Fragrant black coffee with Jameson Irish whiskey and whipped
-                  milk
-                </p>
-                <p class="card__price heading-3">$7.00</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img-wrapper">
-                <img
-                  src="./images/coffee-2.jpg"
-                  alt="Kahlua coffee"
-                  class="card__img"
-                />
-              </div>
-              <div class="card__info">
-                <h2 class="card__title heading-3">Kahlua coffee</h2>
-                <p class="card__desc body-medium">
-                  Classic coffee with milk and Kahlua liqueur under a cap of
-                  frothed milk
-                </p>
-                <p class="card__price heading-3">$7.00</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img-wrapper">
-                <img
-                  src="./images/coffee-3.jpg"
-                  alt="Honey raf"
-                  class="card__img"
-                />
-              </div>
-              <div class="card__info">
-                <h2 class="card__title heading-3">Honey raf</h2>
-                <p class="card__desc body-medium">
-                  Espresso with frothed milk, cream and aromatic honey
-                </p>
-                <p class="card__price heading-3">$5.50</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img-wrapper">
-                <img
-                  src="./images/coffee-4.jpg"
-                  alt="Ice cappuccino"
-                  class="card__img"
-                />
-              </div>
-              <div class="card__info">
-                <h2 class="card__title heading-3">Ice cappuccino</h2>
-                <p class="card__desc body-medium">
-                  Cappuccino with soft thick foam in summer version with ice
-                </p>
-                <p class="card__price heading-3">$5.00</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img-wrapper">
-                <img
-                  src="./images/coffee-5.jpg"
-                  alt="Espresso"
-                  class="card__img"
-                />
-              </div>
-              <div class="card__info">
-                <h2 class="card__title heading-3">Espresso</h2>
-                <p class="card__desc body-medium">Classic black coffee</p>
-                <p class="card__price heading-3">$4.50</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img-wrapper">
-                <img
-                  src="./images/coffee-6.jpg"
-                  alt="Latte"
-                  class="card__img"
-                />
-              </div>
-              <div class="card__info">
-                <h2 class="card__title heading-3">Latte</h2>
-                <p class="card__desc body-medium">
-                  Espresso coffee with the addition of steamed milk and dense
-                  milk foam
-                </p>
-                <p class="card__price heading-3">$5.50</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img-wrapper">
-                <img
-                  src="./images/coffee-7.jpg"
-                  alt="Latte macchiato"
-                  class="card__img"
-                />
-              </div>
-              <div class="card__info">
-                <h2 class="card__title heading-3">Latte macchiato</h2>
-                <p class="card__desc body-medium">
-                  Espresso with frothed milk and chocolate
-                </p>
-                <p class="card__price heading-3">$5.50</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__img-wrapper">
-                <img
-                  src="./images/coffee-8.jpg"
-                  alt="Coffee with cognac"
-                  class="card__img"
-                />
-              </div>
-              <div class="card__info">
-                <h2 class="card__title heading-3">Coffee with cognac</h2>
-                <p class="card__desc body-medium">
-                  Fragrant black coffee with cognac and whipped cream
-                </p>
-                <p class="card__price heading-3">$6.50</p>
-              </div>
-            </article>
-          </div>
+          <!-- Сетка карточек — заполняется через JS -->
+          <div class="catalog__grid" id="catalog-grid"></div>
 
           <div class="catalog__more">
-            <button class="catalog__more-btn" type="button">
+            <button class="catalog__more-btn" type="button" id="catalog-more">
               <span>Show more</span>
             </button>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal__overlay" data-close></div>
+
+      <div class="modal__content" role="dialog" aria-modal="true">
+        <div class="modal__body">
+          <div class="modal__img-wrapper">
+            <img src="" alt="" class="modal__img" id="modal-img" />
+          </div>
+
+          <div class="modal__info">
+            <h2 class="modal__title heading-3" id="modal-title"></h2>
+            <p class="modal__desc body-medium" id="modal-desc"></p>
+
+            <!-- Size -->
+            <div class="modal__section">
+              <h3 class="modal__section-title">Size</h3>
+              <div class="modal__options" id="modal-sizes"></div>
+            </div>
+
+            <!-- Additives -->
+            <div class="modal__section">
+              <h3 class="modal__section-title">Additives</h3>
+              <div class="modal__options" id="modal-additives"></div>
+            </div>
+
+            <!-- Total -->
+            <div class="modal__total">
+              <span class="modal__total-label">Total:</span>
+              <span class="modal__total-price heading-3" id="modal-total"
+                >$0.00</span
+              >
+            </div>
+
+            <p class="modal__notice body-caption">
+              The cost is not final. Download our mobile app to see the final
+              price and place your order. Earn loyalty points and enjoy your
+              favorite coffee with up to 20% discount.
+            </p>
+
+            <button class="modal__submit" type="button" data-close>
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer" id="contacts">
       <div class="container">

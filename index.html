@@ -1,10 +1,20 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coffee Shop</title>
     <link rel="icon" href="./icons/category-coffee.png" type="image/png" />
+
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = saved ?? (prefersDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
     <link rel="stylesheet" href="./src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +35,8 @@
             />
             <img
               src="./icons/logo-dark.svg"
-              alt="Coffee Shop"
+              alt=""
+              aria-hidden="true"
               class="logo__img logo__img--dark"
             />
           </a>
@@ -76,20 +87,66 @@
               />
             </a>
 
-            <button class="burger" id="burger" aria-label="Открыть меню">
+            <button
+              class="burger"
+              id="burger"
+              aria-label="Открыть меню"
+              aria-expanded="false"
+            >
               <img
                 src="./icons/button-icon-burger.svg"
                 alt=""
-                class="burger__img burger__img--light"
+                class="burger__img burger__img--burger burger__img--light"
               />
               <img
                 src="./icons/button-icon-burger-dark.svg"
                 alt=""
-                class="burger__img burger__img--dark"
+                class="burger__img burger__img--burger burger__img--dark"
+              />
+              <img
+                src="./icons/button-icon-burger-cross.svg"
+                alt=""
+                class="burger__img burger__img--cross burger__img--light"
+              />
+              <img
+                src="./icons/button-icon-burger-cross-dark.svg"
+                alt=""
+                class="burger__img burger__img--cross burger__img--dark"
               />
             </button>
           </div>
         </div>
+      </div>
+
+      <!-- Мобильное меню -->
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__list">
+            <li>
+              <a href="#favorite" class="mobile-menu__link">Favorite coffee</a>
+            </li>
+            <li><a href="#about" class="mobile-menu__link">About</a></li>
+            <li>
+              <a href="#mobile-app" class="mobile-menu__link">Mobile app</a>
+            </li>
+            <li>
+              <a href="#contacts" class="mobile-menu__link">Contact us</a>
+            </li>
+            <li>
+              <a
+                href="./catalog.html"
+                class="mobile-menu__link mobile-menu__link--with-icon"
+              >
+                <span>Menu</span>
+                <img
+                  src="./icons/coffee-cup.svg"
+                  alt=""
+                  class="mobile-menu__icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
